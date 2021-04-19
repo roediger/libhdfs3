@@ -36,7 +36,7 @@ ADD_CUSTOM_TARGET(ShowCoverage
 ADD_CUSTOM_TARGET(ShowAllCoverage
     #Capturing lcov counters and generating report
     COMMAND ${LCOV_PATH} -a CodeCoverage.info.cleaned -a CodeCoverage.info.cleaned_withoutHA -o AllCodeCoverage.info
-    COMMAND sed -e 's|/.*/src|${CMAKE_SOURCE_DIR}/src|' -ig AllCodeCoverage.info
+    COMMAND sed -e 's|/.*/src|${PROJECT_SOURCE_DIR}/src|' -ig AllCodeCoverage.info
     COMMAND ${GENHTML_PATH} -o AllCodeCoverageReport AllCodeCoverage.info
 )
 
